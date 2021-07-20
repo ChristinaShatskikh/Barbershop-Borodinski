@@ -181,56 +181,8 @@
         <button class="modal-close" type="button"><span class="visually-hidden">Закрыть</span></button>
     </section>
 
-    <script>
-        let loginLink = document.querySelector(".login-link");
-        let modalLogin = document.querySelector(".modal-login");
-        let modalClose = modalLogin.querySelector(".modal-close");
-        let login = modalLogin.querySelector("[name=login]");
-
-        loginLink.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            modalLogin.classList.add("modal-show");
-            login.focus();
-        });
-
-        modalClose.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            modalLogin.classList.remove("modal-show");
-        });
-
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 27) {
-                if (modalLogin.classList.contains("modal-show")) {
-                    evt.preventDefault();
-                    modalLogin.classList.remove("modal-show");
-                }
-            }
-        });
-
-        let buttonMap = document.querySelector(".js-button-map");
-
-        let modalMap = document.querySelector(".modal-map");
-        let mapClose = modalMap.querySelector(".modal-close");
-
-        buttonMap.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            modalMap.classList.add("modal-show");
-        });
-
-        mapClose.addEventListener("click", function (evt) {
-            evt.preventDefault();
-            modalMap.classList.remove("modal-show");
-        });
-
-        window.addEventListener("keydown", function (evt) {
-            if (evt.keyCode === 27) {
-                if (modalMap.classList.contains("modal-show")) {
-                    evt.preventDefault();
-                    modalMap.classList.remove("modal-show");
-                }
-            }
-        });
-    </script>
+    <script src="js/login.js"></script>
+    <script src="js/map.js"></script>
 </body>
 
 </html>
