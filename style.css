@@ -1089,8 +1089,47 @@ input[type="radio"].visually-hidden {
     background-color: #ffffff;
 }
 
+@keyframes bounce-login {
+    0% {
+        transform: translateY(-2000px);
+    }
+
+    70% {
+        transform: translateY(30px);
+    }
+
+    90% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce-map {
+    0% {
+        transform: translateX(-2000px);
+    }
+
+    70% {
+        transform: translateX(30px);
+    }
+
+    90% {
+        transform: translateX(-10px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+
 .modal {
     position: fixed;
+
+    display: none;
 
     color: #000000;
 
@@ -1101,16 +1140,20 @@ input[type="radio"].visually-hidden {
     box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
 }
 
+.modal-show {
+    display: block;
+}
+
 .modal-login {
     width: 300px;
     padding: 50px 80px;
 
-    display: none;
-
     top: 120px;
     left: 50%;
 
-    transform: translateX(-50%);
+    margin-left: -230px;
+
+    animation: bounce-login 0.6s;
 }
 
 .modal h2 {
@@ -1271,19 +1314,31 @@ input[type="radio"].visually-hidden {
 }
 
 .modal-map {
-    display: none;
-
     top: 50%;
     left: 50%;
 
     width: 766px;
     height: 561px;
 
-    transform: translate(-50%, -50%);
+    margin-top: -280px;
+    margin-left: -390px;
 
     border: 7px solid white;
+
+    animation: bounce-map 0.6s;
 }
 
 .modal-map p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
     margin: 0;
+}
+
+.modal-map iframe {
+    position: relative;
+    z-index: 2;
+
+    border: none;
 }
